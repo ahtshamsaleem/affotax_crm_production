@@ -28,10 +28,10 @@ app.use(compression());
 app.use(morgan("tiny"));
 app.use("/api", require("./server/routes/routes"));
 
-app.use(express.static("./client/reactFrontEnd"));
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./client", "reactFrontEnd", "index.html"));
-});
+// app.use(express.static("./client/reactFrontEnd"));
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "./client", "reactFrontEnd", "index.html"));
+// });
 
 app.use("/", (req, res) => {
   res.send("Server is running...");
